@@ -6,5 +6,5 @@ publish:
     - if: $CI_COMMIT_BRANCH == "setup-publishing"
   extends: [ .sbt ]
   script:
-  - sbt show version
+  - sbt "show version"
   - sbt ci-release
