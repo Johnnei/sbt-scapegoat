@@ -5,4 +5,5 @@ publish:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   extends: [ .sbt ]
   script:
+  - sbt show version
   - sbt ci-release
