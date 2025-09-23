@@ -9,5 +9,5 @@ publish:
     GIT_STRATEGY: clone
     GIT_DEPTH: 0 # Full clone for sbt-dynver
   script:
-  - sbt "show version"
-  - sbt ci-release
+  - git checkout -b $CI_COMMIT_BRANCH
+  - sbt "show version" ci-release
