@@ -5,6 +5,8 @@ publish:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - if: $CI_COMMIT_BRANCH == "setup-publishing"
   extends: [ .sbt ]
+  variables:
+    GIT_DEPTH: 0 # Full clone for sbt-dynver
   script:
   - sbt "show version"
   - sbt ci-release
