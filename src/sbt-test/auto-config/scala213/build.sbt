@@ -5,9 +5,9 @@ lazy val root = (project in file("."))
     TaskKey[Unit]("check") := {
       val dependencies = libraryDependencies.value
       val scapegoat =
-        dependencies.find(d => d.organization == "org.johnnei.scapegoat" && d.name == "scalac-scapegoat-plugin")
-      if (!scapegoat.map(_.revision).contains("3.2.0")) {
-        sys.error(s"Expected Scapegoat version to default to 3.2.0 for scala ${scalaVersion.value}, got: ${scapegoat}")
+        dependencies.find(d => d.organization == "com.sksamuel.scapegoat" && d.name == "scalac-scapegoat-plugin")
+      if (!scapegoat.map(_.revision).contains("3.2.1")) {
+        sys.error(s"Expected Scapegoat version to default to 3.2.1 for scala ${scalaVersion.value}, got: ${scapegoat}")
       }
     },
   )
